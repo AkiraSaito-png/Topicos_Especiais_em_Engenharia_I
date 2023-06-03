@@ -1,0 +1,26 @@
+#Trabalhar com plotly e construir os gráficos:
+#
+#    - valor x mês por tipo, gráfico de linha.
+#    - histograma numero funcionários x  cidades.
+#    - histograma valor x cidades em cada tipo.
+#
+#   Diretório do documento:
+#   https://docs.google.com/spreadsheets/d/1bQclG_lEMmKk54zatRpEbCyZTgAKlGZN9MhCkJkfx4Q/edit#gid=1581028379
+#
+#   Aluno: Akira Saito
+#   Cód.: 831474
+#
+#%%
+import plotly.express as px
+import pandas as pd
+
+dados = pd.read_excel('dados\Dados_plotly (1).xlsx')
+
+df = pd.DataFrame(dados)
+dados_x = df['mês']
+dados_y = df['Tipo']
+
+# %%
+fig = px.line(x = dados_x, y = dados_y)
+fig.show()
+# %%
